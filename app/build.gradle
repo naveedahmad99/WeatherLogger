@@ -1,0 +1,158 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "com.nido.weatherlogger"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                    "room.schemaLocation":"$projectDir/schemas".toString(),
+                    "room.incremental":"true",
+                    "room.expandProjection":"true"
+                ]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        String sharedTestDir = 'src/sharedTest/kotlin'
+
+        main.java.srcDirs = ['src/main/kotlin']
+        main.assets.srcDirs = ['src/main/assets']
+
+        test.java.srcDirs = ['src/test/kotlin', sharedTestDir]
+        test.res.srcDirs = ['src/test/res']
+
+        androidTest.java.srcDirs = ['src/androidTest/kotlin', sharedTestDir]
+        androidTest.res.srcDirs = ['src/androidTest/res']
+    }
+
+    // Always show the result of every unit test, even if it passes.
+    testOptions.unitTests {
+        includeAndroidResources = true
+
+        all {
+            testLogging {
+                events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+            }
+        }
+    }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    // Android spec dependencies
+    implementation "androidx.appcompat:appcompat:$version_appcompat"
+    implementation "androidx.core:core-ktx:$version_androidx_core"
+    implementation "androidx.constraintlayout:constraintlayout:$version_constraint_layout"
+    implementation "com.google.android.material:material:$version_material"
+    implementation "androidx.viewpager2:viewpager2:$version_viewpager"
+    implementation "androidx.recyclerview:recyclerview:$version_recycler_view"
+    implementation "androidx.fragment:fragment:$version_fragment"
+
+    // Architecture Components
+    implementation "androidx.room:room-runtime:$version_room"
+    kapt "androidx.room:room-compiler:$version_room"
+    implementation "androidx.room:room-ktx:$version_room"
+    implementation "androidx.lifecycle:lifecycle-extensions:$version_arch_lifecycle"
+    kapt "androidx.lifecycle:lifecycle-common-java8:$version_arch_lifecycle"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$version_arch_lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$version_arch_lifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$version_arch_lifecycle"
+    implementation "androidx.navigation:navigation-fragment-ktx:$version_navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$version_navigation"
+    implementation "androidx.work:work-runtime-ktx:$version_work"
+
+    // Kotlin support
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$version_kotlin"
+
+    // Kotlin Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version_coroutines"
+
+    // Koin Dependency Injection
+    implementation "org.koin:koin-androidx-scope:$version_koin"
+    implementation "org.koin:koin-androidx-viewmodel:$version_koin"
+
+    // Retrofit2 with moshi converter
+    implementation "com.squareup.retrofit2:retrofit:$version_retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$version_retrofit"
+
+    // Moshi
+    implementation "com.squareup.moshi:moshi:$version_moshi"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$version_moshi"
+
+    // 3rd party
+    implementation "com.yarolegovich:discrete-scrollview:$version_discrete_scrollview"
+    implementation "org.ocpsoft.prettytime:prettytime:4.0.3.Final"
+    implementation 'pl.hypeapp:materialtimelineview:1.1'
+    implementation 'org.ocpsoft.prettytime:prettytime:4.0.3.Final'
+    implementation 'me.jorgecastillo:androidcolorx:0.2.0'
+
+//    // Dependencies for local unit tests
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testImplementation "org.hamcrest:hamcrest-all:$hamcrestVersion"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version_coroutines"
+
+    // AndroidX test - unit testing
+    testImplementation "androidx.test:core-ktx:$androidXTestCoreVersion"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+
+    // AndroidX test - intrumented testing
+    androidTestImplementation "androidx.test:core-ktx:$androidXTestCoreVersion"
+    androidTestImplementation "androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion"
+    androidTestImplementation "androidx.test:rules:$androidXTestRulesVersion"
+    androidTestImplementation "androidx.room:room-testing:$version_room"
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
+    androidTestImplementation "androidx.work:work-testing:$version_work"
+
+    // Dependencies for Android instrumented unit tests
+    androidTestImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "org.mockito:mockito-core:$mockitoVersion"
+    androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:$dexMakerVersion"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version_coroutines"
+
+    // Testing code should not be included in the main code.
+    // Once https://issuetracker.google.com/128612536 is fixed this can be fixed.
+    debugImplementation "androidx.fragment:fragment-testing:$fragmentVersion"
+    implementation "androidx.test:core:$androidXTestCoreVersion"
+}
