@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentHome"
+    tools:ignore="UnusedNavigation">
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.nido.weatherlogger.domain.screens.home.HomeFragment"
+        android:label="FragmentHome">
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentCityForecastDetails"
+            app:destination="@id/fragmentCityForecastDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCityForecastDetails"
+        android:name="com.nido.weatherlogger.domain.screens.details.CityForecastDetailsFragment"
+        android:label="FragmentCityForecastDetails">
+        <argument
+            android:name="cityId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_fragmentCityForecastDetails_to_fragmentHome"
+            app:destination="@id/fragmentHome" />
+    </fragment>
+</navigation>
