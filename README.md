@@ -2,48 +2,69 @@
 
 The **Weather logger** application used to can log and save your current Weather data based on your location. 
 
+**The Following screen shoots for app**
+
+![Screen](https://github.com/naveedahmad99/WeatherLogger/blob/master/Screenshot.gif)
+______________________________________________________________________________
 **Description:**
 Create an Android application to save weather conditions for your current location.
 
 **Main functionality:**
 The weather information should be retrieved from [Weather API website](https://openweathermap.org/api) select > CurrentWeatherData API. 
+
 By default service returns a lot of data, but it’s mandatory to save and display only **temperature**. 
 Usage of other data is optional but creativity is welcome here.
+
 After ‘Save’ is pressed the application should retrieve the weather data from the API, 
 store it locally together with the date of the event (request time) and then display it on screen.
+
 Display the data in a list or graphical chart.
+
 Data model is completely up to you, feel free to use custom frameworks and libraries
+
 what might help you with application development.
+
 For Weather API service usage you need to register in the portal and receive an APP KEY. 
 Use it in network requests to fetch data.
 
 **Non-functional requirements:**
+
 ● Compatibility with Android 4.1 and onwards
+
 ● Code quality, readability and consistent code style
+
 ● Best UI practices (Material design)
+
 ● Local data storage
+
 ● Unit test (JUnit/Robolectric)
 
 **Optional Requirements:**
+
 Completion of Optional requirements will grant additional bonus points
+
 ● UI layout optimized for both Phone and Tablets screens
-● Implement ‘More details’ screen (with ability to view more detailed information
-about weather data returned from API)
+
+● Implement ‘More details’ screen (with ability to view more detailed information about weather data returned from API)
+
 ● Fetching and processing weather data for more locations
+
 ● Refresh the weather data periodically
+
 ● Ability to access application weather data from 3rd party apps via shared content
 provider or other solutions
+
 ● Custom animations, transitions between screens
+
 ● Create Widget for Home Screen
+
 ● All CRUD operations
+
 ● UI tests using Espresso
+
 ● Use Kotlin instead of Java for MainActivity
 ________________________________________________________________________________________
 
-**The Following screen shoots for app**
-
-![Screen](https://github.com/naveedahmad99/WeatherLogger/blob/master/Screenshot.gif)
-______________________________________________________________________________
 
 **Architecture & Libraries & Dependencies** used to do that task:
 
