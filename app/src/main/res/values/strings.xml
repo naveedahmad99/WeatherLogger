@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name" translatable="false">Weather Logger</string>
+
+    <string name="celsius">°C</string>
+    <string name="measured"><b>Measured: </b>%1$s</string>
+    <string name="temperature"><b>Temperature: </b>%1$d °C</string>
+    <string name="pressure"><b>Pressure: </b>%1$d hPa</string>
+    <string name="humidity"><b>Humidity: </b>%1$d pct</string>
+    <string name="wind"><b>Wind: </b>%1$f m/s</string>
+    <string name="city_forecast_data">Forecast data for %s</string>
+    <string name="description">description</string>
+</resources>
