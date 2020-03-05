@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="grayIconTint">#727272</color>
+
+<!--    <color name="weatherAccent">#84ceca</color>-->
+
+    <color name="gradientThunderstorm_c1">#4165A3</color>
+    <color name="gradientThunderstorm_c2">#847EA5</color>
+    <color name="gradientThunderstorm_c3">#CFAEA7</color>
+
+    <array name="gradientThunderstorm">
+        <item>@color/gradientThunderstorm_c1</item>
+        <item>@color/gradientThunderstorm_c2</item>
+        <item>@color/gradientThunderstorm_c3</item>
+    </array>
+
+    <color name="gradientDrizzle_c1">#656D91</color>
+    <color name="gradientDrizzle_c2">#769BB5</color>
+    <color name="gradientDrizzle_c3">#7BB5C3</color>
+
+    <array name="gradientDrizzle">
+        <item>@color/gradientDrizzle_c1</item>
+        <item>@color/gradientDrizzle_c2</item>
+        <item>@color/gradientDrizzle_c3</item>
+    </array>
+
+    <color name="gradientRain_c1">#566570</color>
+    <color name="gradientRain_c2">#70838A</color>
+    <color name="gradientRain_c3">#AEB6BB</color>
+
+    <array name="gradientRain">
+        <item>@color/gradientRain_c1</item>
+        <item>@color/gradientRain_c2</item>
+        <item>@color/gradientRain_c3</item>
+    </array>
+
+    <color name="gradientSnow_c1">#333651</color>
+    <color name="gradientSnow_c2">#4C4F69</color>
+    <color name="gradientSnow_c3">#CCCDD8</color>
+
+    <array name="gradientSnow">
+        <item>@color/gradientSnow_c1</item>
+        <item>@color/gradientSnow_c2</item>
+        <item>@color/gradientSnow_c3</item>
+    </array>
+
+    <color name="gradientAtmosphere_c1">#9BBAD1</color>
+    <color name="gradientAtmosphere_c2">#CED6DC</color>
+    <color name="gradientAtmosphere_c3">#EBE6E1</color>
+
+    <array name="gradientAtmosphere">
+        <item>@color/gradientAtmosphere_c1</item>
+        <item>@color/gradientAtmosphere_c2</item>
+        <item>@color/gradientAtmosphere_c3</item>
+    </array>
+
+    <color name="gradientClear_c1">#52A3DA</color>
+    <color name="gradientClear_c2">#66B0DE</color>
+    <color name="gradientClear_c3">#72B9E0</color>
+
+    <array name="gradientClear">
+        <item>@color/gradientClear_c1</item>
+        <item>@color/gradientClear_c2</item>
+        <item>@color/gradientClear_c3</item>
+    </array>
+
+    <color name="gradientClouds_c1">#5592B1</color>
+    <color name="gradientClouds_c2">#81A9BF</color>
+    <color name="gradientClouds_c3">#A6BCC9</color>
+
+    <array name="gradientClouds">
+        <item>@color/gradientClouds_c1</item>
+        <item>@color/gradientClouds_c2</item>
+        <item>@color/gradientClouds_c3</item>
+    </array>
+</resources>

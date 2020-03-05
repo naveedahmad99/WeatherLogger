@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="dataCityName" type="String" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="116dp"
+        android:layout_gravity="center"
+        android:layout_margin="4dp">
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="?android:selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <TextView
+                android:id="@+id/city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="8dp"
+                android:paddingTop="4dp"
+                android:text="@{dataCityName}"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="Baku"
+                android:visibility="invisible"/>
+
+            <ImageView
+                android:id="@+id/city_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/description"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:tint="@color/grayIconTint"
+                tools:src="@drawable/baku_maiden_tower"/>
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
