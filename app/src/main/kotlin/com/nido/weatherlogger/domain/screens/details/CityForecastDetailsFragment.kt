@@ -35,9 +35,7 @@ class CityForecastDetailsFragment : Fragment() {
         binding.toolbar.run {
             setNavigationIcon(R.drawable.ic_close)
             setNavigationOnClickListener {
-                findNavController().navigate(
-                    CityForecastDetailsFragmentDirections.actionFragmentCityForecastDetailsToFragmentHome()
-                )
+                findNavController().popBackStack()
             }
             title = getString(R.string.city_forecast_data).format(cityId.cityNameById())
             setTitleTextColor(resources.getColor(R.color.white, null))
